@@ -28,19 +28,20 @@ def manova(formula, data):
 
 
 # %% Test on the iris datasets
-import numpy as np
-from sklearn.datasets import load_iris
+if __name__ == "__main__":
+    import numpy as np
+    from sklearn.datasets import load_iris
 
-# Get the iris dataset in a dataframe
-iris = load_iris()
-target = iris.target.reshape(-1, 1)
-data = np.concatenate([iris.data, target], axis=1)
-columns = ["col1", "col2", "col3", "col4", "label"]
-df = pd.DataFrame(data, columns=columns)
-df["label"] = df["label"].astype(int)
-df.head()
+    # Get the iris dataset in a dataframe
+    iris = load_iris()
+    target = iris.target.reshape(-1, 1)
+    data = np.concatenate([iris.data, target], axis=1)
+    columns = ["col1", "col2", "col3", "col4", "label"]
+    df = pd.DataFrame(data, columns=columns)
+    df["label"] = df["label"].astype(int)
+    df.head()
 
-# Run through MANOVA
-formula = "cbind(col1, col2, col3, col4) ~ label"
-summary = manova(formula, df)
-summary.head()
+    # Run through MANOVA
+    formula = "cbind(col1, col2, col3, col4) ~ label"
+    summary = manova(formula, df)
+    print(summary.head())
