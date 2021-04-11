@@ -1,4 +1,4 @@
-# rpy-dev
+# wrapped
 
 There are many useful R functions that aren't available in Python (particularly for hypothesis testing).
 
