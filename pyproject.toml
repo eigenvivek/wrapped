@@ -9,4 +9,7 @@ author-email = "vgopala4@jh.edu"
 home-page = "https://v715.github.io"
 classifiers = [ "License :: OSI Approved :: MIT License",]
 description-file = "README.md"
-
+requires = [
+    "rpy2",
+    "pandas",
+]
